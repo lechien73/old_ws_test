@@ -16,7 +16,7 @@ RUN curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-ins
     && pyenv global 3.8.11 \
     && python3 -m pip install --no-cache-dir --upgrade pip \
     && sudo rm -rf /tmp/*
-ENV PIP_USER=no
+
 ENV PIPENV_VENV_IN_PROJECT=true
 ENV PYTHONUSERBASE=/workspace/.pip-modules
 ENV PATH=$PYTHONUSERBASE/bin:$PATH
