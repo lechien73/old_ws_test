@@ -20,3 +20,5 @@ RUN curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-ins
         mypy autopep8 pep8 pylama pydocstyle bandit notebook \
         twine \
     && sudo rm -rf /tmp/*USER gitpod
+ENV PYTHONUSERBASE=/workspace/.pip-modules \
+    PIP_USER=yes
