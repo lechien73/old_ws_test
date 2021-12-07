@@ -15,10 +15,8 @@ RUN curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-ins
     && pyenv install 3.8.11 \
     && pyenv global 3.8.11 \
     && python3 -m pip install --no-cache-dir --upgrade pip \
-    && sudo rm -rf /tmp/*
-
-ENV PIPENV_VENV_IN_PROJECT=true
-ENV PYTHONUSERBASE=/workspace/.pip-modules
-ENV PATH=$PYTHONUSERBASE/bin:$PATH
-
-USER gitpod
+    && python3 -m pip install --no-cache-dir --upgrade \
+        setuptools wheel virtualenv pipenv pylint rope flake8 \
+        mypy autopep8 pep8 pylama pydocstyle bandit notebook \
+        twine \
+    && sudo rm -rf /tmp/*USER gitpod
